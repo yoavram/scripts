@@ -1,0 +1,1 @@
+doskey python3="C:\Python32\python.exe" $*
