@@ -1,0 +1,1 @@
+doskey zcat="C:\Python27\python.exe" "D:\scripts\zcat.py" $*
