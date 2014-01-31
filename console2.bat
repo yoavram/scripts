@@ -1,0 +1,1 @@
+"C:\Program Files (x86)\Console2\Console.exe" -t Console2 -r "/k doskey /macrofile=D:\scripts\macros"
