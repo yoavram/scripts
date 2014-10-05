@@ -1,3 +1,4 @@
 subl="C:\Program Files\Sublime Text 2\sublime_text.exe" $*
 7z="C:\Program Files\7-Zip\7z.exe" $*
 zcat="C:\Python27\python.exe" "D:\scripts\zcat.py" $*
+python3="D:\pyzo2014a\python.exe" $*
