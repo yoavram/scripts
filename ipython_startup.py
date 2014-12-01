@@ -7,10 +7,7 @@ import pandas as pd
 np.set_printoptions(linewidth=80)
 np.set_printoptions(precision=3)
 
-from mpltools import style
-style.use('ggplot')
-
-from PIL import Image
+'''from PIL import Image
 from IPython.core import display
 from io import BytesIO
 
@@ -26,6 +23,6 @@ def display_pil_image(im):
 
 # register display func with PNG formatter:
 png_formatter = get_ipython().display_formatter.formatters['image/png']
-png_formatter.for_type(Image.Image, display_pil_image)
+png_formatter.for_type(Image.Image, display_pil_image)'''
 
 print "Hi Yoav!"
