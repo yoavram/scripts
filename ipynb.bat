@@ -1,1 +1,1 @@
-ipython notebook --pylab=inline --profile=default
+ipython notebook --profile=default
