@@ -1,1 +1,1 @@
-doskey python3="C:\Python32\python.exe" $*
+doskey python3="D:\pyzo2014a\python.exe" $*
