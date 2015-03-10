@@ -1,0 +1,1 @@
+set GIT_SSH=c:\Program Files (x86)\Git\bin\ssh.exe
