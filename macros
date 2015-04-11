@@ -1,4 +1,5 @@
+atom="C:\Users\yoavram\AppData\Local\atom\app-0.189.0\atom.exe" $*
 subl="C:\Program Files\Sublime Text 2\sublime_text.exe" $*
 7z="C:\Program Files\7-Zip\7z.exe" $*
-zcat="C:\Python27\python.exe" "D:\scripts\zcat.py" $*
+zcat=python "D:\scripts\zcat.py" $*
 python3="D:\pyzo2014a\python.exe" $*
