@@ -1,0 +1,21 @@
+[user]
+	email = yoavram+github@gmail.com
+	name = Yoav Ram
+[push]
+	default = simple
+[credential]
+	helper = !'C:\\Users\\yoavram\\AppData\\Roaming\\GitCredStore\\git-credential-winstore.exe'
+[core]
+	autocrlf = false
+# http://blog.martinfenner.org/2014/08/25/using-microsoft-word-with-git/
+[diff "pandoc"]
+ 	textconv = pandoc --to=markdown
+ 	prompt = false
+[alias]
+ 	wdiff = diff --word-diff=color --unified=1
+[gui]
+	recentrepo = D:/workspace/Midgam
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
