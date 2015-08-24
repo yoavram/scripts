@@ -4,6 +4,7 @@
 [push]
 	default = simple
 [core]
+	pager = less -r
 	autocrlf = false
 # http://blog.martinfenner.org/2014/08/25/using-microsoft-word-with-git/
 [diff "pandoc"]
