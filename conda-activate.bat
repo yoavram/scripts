@@ -55,7 +55,7 @@ if "%CONDA_DEFAULT_ENV%" == "" goto skipdeactivate
 set CONDA_DEFAULT_ENV=%CONDA_NEW_PATH%
 echo Activating environment "%CONDA_DEFAULT_ENV%"...
 set PATH=%CONDA_DEFAULT_ENV%;%CONDA_DEFAULT_ENV%\Scripts;%PATH%
-set PROMPT=[%CONDA_NEW_NAME%] $P$G
+set PROMPT=[%CONDA_NEW_NAME%] %PROMPT%
 set CONDA_NEW_NAME=
 set CONDA_NEW_PATH=
 
