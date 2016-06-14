@@ -1,0 +1,1 @@
+cd %PROGRAMDATA%\jupyter\kernels
