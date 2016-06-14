@@ -1,3 +1,4 @@
+# gist at https://gist.github.com/c1f71ca235a7ef217df3
 [user]
 	email = yoavram+github@gmail.com
 	name = Yoav Ram
@@ -5,16 +6,21 @@
 	default = simple
 [core]
 	pager = less -r
-	autocrlf = false
+	autocrlf = true
 # http://blog.martinfenner.org/2014/08/25/using-microsoft-word-with-git/
 [diff "pandoc"]
  	textconv = pandoc --to=markdown
  	prompt = false
 [alias]
  	wdiff = diff --word-diff=color --unified=1
-[gui]
-	recentrepo = D:/workspace/Midgam
+ 	l = log --oneline --decorate -10
 [filter "lfs"]
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
 	required = true
+[pager]
+	log = diff-highlight | less
+	show = diff-highlight | less
+	diff = diff-highlight | less
+[interactive]
+	diffFilter = diff-highlight
