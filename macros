@@ -1,5 +1,6 @@
-atom="C:\Users\yoavram\AppData\Local\atom\app-0.189.0\atom.exe" $*
 subl="C:\Program Files\Sublime Text 2\sublime_text.exe" $*
 7z="C:\Program Files\7-Zip\7z.exe" $*
 zcat=python "D:\scripts\zcat.py" $*
-python3="D:\pyzo2014a\python.exe" $*
+python3="D:\Anaconda3\python.exe" $*
+python2="D:\Anaconda3\envs\py27\python.exe" $*
+code="C:\Program Files (x86)\Microsoft VS Code\Code.exe" $*
