@@ -32,7 +32,7 @@ def main(filename, password):
 
 	for i, attach in enumerate(attachments):
 		click.echo("Extracting {}".format(attach))
-		tmp_fname = mktemp(prefix=attach, suffix='.html')
+		tmp_fname = mktemp(suffix=attach)
 		save_cmd = [
 			command_name, 
 			'-save', str(i + 1), 
