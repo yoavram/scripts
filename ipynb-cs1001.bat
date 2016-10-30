@@ -1,1 +1,0 @@
-C:\Python32\Scripts\ipython3.exe notebook --pylab=inline --profile=cs1001.py
