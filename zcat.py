@@ -1,9 +1,11 @@
+from __future__ import print_function
 import gzip
 import sys
+
 if len(sys.argv) != 2:
-	print "Usage: python zcat.py <filename>\nwhere <filename> is name of a text file compressed with gzip"
+	print("Usage: python zcat.py <filename>\nwhere <filename> is name of a text file compressed with gzip")
 	sys.exit(1)
 fn = sys.argv[1]
 with gzip.open(fn) as f:
-	print f.read()
+	print(f.read())
 sys.exit(0)
