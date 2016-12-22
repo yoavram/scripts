@@ -1,0 +1,1 @@
+cd /usr/local/share/jupyter/kernels/
