@@ -1,0 +1,5 @@
+if [ $(md5 -q "$1") = $2 ]; then
+	echo 'good'
+else
+	echo 'bad'
+fi
