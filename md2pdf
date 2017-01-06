@@ -1,0 +1,1 @@
+pandoc $1.md -o $1.pdf --latex-engine=xelatex && open $1.pdf
