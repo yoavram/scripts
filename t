@@ -2,9 +2,10 @@ if [ "$TERM" != "screen" ]
 then
     if type tmux >/dev/null 2>&1
     then
-        tmux att || tmux \
-            new -s Yoav -n jupyter "cd Work && jupyter notebook" \; \
+        tmux -CC attach || tmux -CC \
+            new -s Yoav -n jupyter "cd Work && jupyter notebook --no-browser" \; \
             neww -n ipython  "source activate scipy && ipython" \; \
             neww
     fi
 fi
+
