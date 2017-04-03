@@ -1,0 +1,1 @@
+osascript -e 'tell app "Deckset" to open "'$(pwd)/$1'"'
