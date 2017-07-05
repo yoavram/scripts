@@ -1,5 +1,15 @@
+if [ ! -f "$1" ]; then
+    echo 'File not found!'
+    exit -1
+fi
+if [ ! "$2" ]; then
+    echo 'No checksum given'
+    exit -1
+fi
 if [ $(md5 -q "$1") = $2 ]; then
-	echo 'good'
+	echo 'Good'
+	exit 0
 else
-	echo 'bad'
+	echo 'Bad'
+	exit 1
 fi
