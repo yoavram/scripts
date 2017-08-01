@@ -1,0 +1,1 @@
+gs -q -dNOPAUSE -sDEVICE=png256 -sOutputFile=$2 -r300 $1 -c quit
