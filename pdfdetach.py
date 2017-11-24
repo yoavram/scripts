@@ -3,30 +3,35 @@ from tempfile import mktemp
 from os.path import exists
 from os import remove
 from warnings import warn
+import getpass
 
 # pip install click
 import click
+# pip install keyring
+# keyring set <keyring_system> <username>
+import keyring
 
 # install poppler: brew install poppler
 command_name = 'pdfdetach'
-
+keyring_system = 'leumimail'
 
 @click.command()
 @click.argument('filename', type=click.Path(exists=True))
-@click.option('--password', prompt=True, hide_input=True)
-def main(filename, password):
-	list_cmd = [
+# @click.option('--password', prompt=True, hide_input=True)
+def main(filename):
+	version_cmd = [
 		command_name, 
 		'--version'		
 	]
 	try:
-		res = run(list_cmd, stdout=PIPE)
+		res = run(version_cmd, stdout=PIPE)
 		lines = res.stdout.decode('utf8').split('\n')
 		# assert lines[0].startswith('pdfdetach version')
 	except (FileNotFoundError, AssertionError):
 		print("Please install pdfdetach: brew install poppler")
 		raise click.Abort()
 
+	password = keyring.get_password(keyring_system, getpass.getuser())
 	list_cmd = [
 		command_name, 
 		'-list', 
