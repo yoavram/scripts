@@ -19,17 +19,17 @@ keyring_system = 'leumimail'
 @click.argument('filename', type=click.Path(exists=True))
 # @click.option('--password', prompt=True, hide_input=True)
 def main(filename):
-	version_cmd = [
-		command_name, 
-		'--version'		
-	]
-	try:
-		res = run(version_cmd, stdout=PIPE)
-		lines = res.stdout.decode('utf8').split('\n')
-		# assert lines[0].startswith('pdfdetach version')
-	except (FileNotFoundError, AssertionError):
-		print("Please install pdfdetach: brew install poppler")
-		raise click.Abort()
+	# version_cmd = [
+	# 	command_name, 
+	# 	'--version'		
+	# ]
+	# try:
+	# 	res = run(version_cmd, stdout=PIPE)
+	# 	lines = res.stdout.decode('utf8').split('\n')
+	# 	assert lines[0].startswith('pdfdetach version')
+	# except (FileNotFoundError, AssertionError):
+	# 	print("Please install pdfdetach: brew install poppler")
+	# 	raise click.Abort()
 
 	password = keyring.get_password(keyring_system, getpass.getuser())
 	list_cmd = [
