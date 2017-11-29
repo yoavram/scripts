@@ -1,6 +1,6 @@
 #!	/Users/yoavram/miniconda3/bin/python
 import poplib
-from email import parser
+from email.parser import Parser
 import keyring
 
 USERNAME = 'yoavram'
@@ -11,19 +11,19 @@ MAIL_SERVER = 'pop.gmail.com'
 password = keyring.get_password(MAIL_SYSTEM, USERNAME)
 pop_conn = poplib.POP3_SSL(MAIL_SERVER)
 pop_conn.user(USERNAME)
-pop_conn.pass_(password)
-#Get messages from server:
+res = pop_conn.pass_(password)
+assert res == b'+OK Welcome.', res
+parser = Parser()
+
 num = len(pop_conn.list()[1])
 if not num:
 	print("No new messages")
 else:
 	#print("{} new messages".format(num))
-	messages = (pop_conn.retr(i) for i in range(1, num + 1))
-	# Concat message pieces:
-	messages = ((m.decode('utf8') for m in mssg[1]) for mssg in messages)
-	messages = ("\n".join(mssg) for mssg in messages)
-	#Parse message intom an email object:
-	messages = [parser.Parser().parsestr(mssg) for mssg in messages]
-	for message in messages:
-	    print('{}: {}'.format(message['from'], message['subject']))
+	messages = (pop_conn.top(i, 0) for i in range(1, num + 1))
+	messages = ((m.decode('utf8') for m in msg[1]) for msg in messages)
+	messages = ("\n".join(msg) for msg in messages)
+	messages = [parser.parsestr(msg) for msg in messages]
+	for msg in messages:
+	    print('{}: {}'.format(msg['from'], msg['subject']))
 pop_conn.quit()
