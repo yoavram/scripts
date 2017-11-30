@@ -19,11 +19,15 @@ num = len(pop_conn.list()[1])
 if not num:
 	print("No new messages")
 else:
-	#print("{} new messages".format(num))
-	messages = (pop_conn.top(i, 0) for i in range(1, num + 1))
-	messages = ((m.decode('utf8') for m in msg[1]) for msg in messages)
-	messages = ("\n".join(msg) for msg in messages)
-	messages = [parser.parsestr(msg) for msg in messages]
-	for msg in messages:
-	    print('{}: {}'.format(msg['from'], msg['subject']))
+	print("{} new messages".format(num))
+	try:
+		n = int(input("How many? (0)"))
+	except ValueError:
+		n = 0
+	for i in range(num - n + 1, num + 1):
+		msg = pop_conn.top(i, 0)
+		msg = (m.decode('utf8') for m in msg[1])
+		msg = "\n".join(msg)
+		msg = parser.parsestr(msg)
+		print('{}\t{}\t{}\n'.format(i, msg['from'], msg['subject']))		
 pop_conn.quit()
