@@ -4,9 +4,9 @@ then
     then
         tmux -CC attach || tmux -CC \
             new -s Yoav -n jupyter "cd Work && jupyter lab --no-browser" \; \
-            neww -n ipython  "source activate scipy && ipython" \; \
+            neww -n ipython "source activate scipy && ipython" \; \
             #neww -n julia  "julia" \; \
-            neww -n term
+            neww -n term "cd Work"
     fi
 fi
 
