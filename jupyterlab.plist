@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>KeepAlive</key>
+    <false/>
+    <key>RunAtLoad</key>
+	<true/>
+    <key>Label</key>
+    <string>local.jupyter.lab</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/yoavram/miniconda3/bin/jupyter</string>
+        <string>lab</string>
+        <string>--notebook-dir</string>
+        <string>/Users/yoavram/Work</string>
+        <string>--no-browser</string>
+    </array>
+    <key>StandardErrorPath</key>
+    <string>/Users/yoavram/Library/LaunchAgents/jupyter.lab.stderr</string>
+    <key>StandardOutPath</key>
+    <string>/Users/yoavram/Library/LaunchAgents/jupyter.lab.stdout</string>
+    <key>WorkingDirectory</key>
+    <string>/Users/yoavram/Work</string>
+    <key>EnvironmentVariables</key>
+    <dict>
+           <key>PATH</key>
+           <string>/Users/yoavram/miniconda3/bin:/Users/yoavram/miniconda3/condabin</string>
+    </dict>
+</dict>
+</plist>
